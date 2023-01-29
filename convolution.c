@@ -3,7 +3,7 @@
 int * convolution(int a[], int b[], int inputArraySize)
 {
     int resArrayLength = inputArraySize*2-1;
-    int resArr[resArrayLength];
+    static int resArr[sizeof(a)/sizeof(int)*2-1];
 
     for (int i = 0; i < inputArraySize; i++)
     {
