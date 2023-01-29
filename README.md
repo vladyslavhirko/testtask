@@ -10,7 +10,8 @@
 2. Login to the AWS account using AWS cli tool. `aws configure`
    - Pass account creds (access key, secret key), region should be `us-east-1`
 3. Initialize terraform. `terraform init`. This command will install all requirement modules and create terraform data.
-4. C and Python code already exists. But for using C function as shared object in the python you should create *.so file. ` gcc -shared -o convolution.so -fPIC convolution.c`
+4. C and Python code already exists. But for using C function as library in the python you should create *.so file.
+` gcc -shared -o convolution.so -fPIC convolution.c` or copy into root dir from `so_linux_generated` or `so_macos_generated` directories 
 5. Next need to put .so file and python script into archive: `zip function.zip main.py convolution.so`. Both of the files should be in one directory. 
 Generated archive should be in the root directory. 
 6. For applying terraform configuration - type `terraform apply`.
