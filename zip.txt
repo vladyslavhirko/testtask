@@ -1,0 +1,13 @@
+data "archive_file" "zip_code" {
+  type        = "zip"
+  output_path = "function.zip"
+
+  source {
+    content  = "sources"
+    filename = "main.py"
+  }
+  source {
+    content  = "sources"
+    filename = "convolution.so"
+  }
+}
